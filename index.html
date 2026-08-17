@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IFS Learn · Request Initiation</title>
+  <meta name="description" content="Interactive gamified POC to learn the IFS Cloud 'Create New Request' process." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+
+    <!-- Top bar -->
+    <header class="topbar">
+      <div class="logo" id="logo">IFS</div>
+      <div>
+        <div class="t-title" id="t-title">Request Initiation</div>
+        <div class="t-sub" id="t-sub">Create New Request — Interactive Learning POC</div>
+      </div>
+      <div class="spacer"></div>
+      <div class="scorebox">
+        <div class="score" id="score">0</div>
+        <div class="label">POINTS</div>
+      </div>
+    </header>
+
+    <!-- Progress + trophies -->
+    <div class="progress-wrap">
+      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="trophy-rail" id="trophyRail"></div>
+    </div>
+
+    <!-- Canvas journey map -->
+    <div class="map-card">
+      <canvas id="map" width="960" height="260" aria-label="Process journey map"></canvas>
+    </div>
+
+    <!-- Active stage / quiz / result panel -->
+    <section class="panel" id="panel" aria-live="polite"></section>
+
+    <!-- Fidelity note -->
+    <div class="fidelity">
+      <b>Fidelity note (POC):</b> The <i>process steps</i> (Create → capture details → link service object →
+      warranty / service commercial rule → save &amp; release → work task) reflect the IFS Cloud
+      <a id="srcLink" href="https://docs.ifs.com/ifsclouddocs/26r1/ProcessModels/Process_Model/Requestinitiation.htm" target="_blank" rel="noopener">Request Initiation process model</a>.
+      Sample data (customer names, asset serials, warranty dates) is <b>illustrative</b> and invented for gameplay.
+      Items marked <code>// TODO: verify</code> in <code>content.js</code> (e.g. exact Request Type values)
+      should be confirmed against your documentation before wider use.
+    </div>
+
+  </main>
+
+  <!-- content first, then engine -->
+  <script src="content.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
